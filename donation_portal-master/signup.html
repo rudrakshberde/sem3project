@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form</title>
+        <link rel="stylesheet" href="formcss.css">
+        <link href="https://fonts.googleapis.com/css?family=Nunito:400,300" rel="stylesheet" type="text/css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <form action=" insert.php"  method="POST">
+            <h1>Sign Up</h1>
+
+            <fieldset>
+
+                <legend><span class="section">1</span>Registering NGO</legend>
+
+
+           <label class="" for= "Organization">Organization:</label>
+           <input type="text" name="organization">
+
+
+            <label class="" for= "email">Email:</label>
+            <input type="email" name="email" >
+
+            <label class="" for= "password">Password:</label>
+            <input type="password" name="password" id="password" required>
+
+
+           <label class="" for= "confirm">Confirm password:</label>
+           <input type="password" name="Confirm Password" id="confirm_password">
+
+           </fieldset>
+
+           <button type="submit" name="submit">Sign up</button>
+
+           <script>
+            var password = document.getElementById("password"),
+            confirm_password = document.getElementById("confirm_password");
+
+function validatePassword(){
+  if(password.value != confirm_password.value) {
+    confirm_password.setCustomValidity("Passwords Don't Match");
+  } else {
+    confirm_password.setCustomValidity('');
+  }
+}
+
+password.onchange = validatePassword;
+confirm_password.onkeyup = validatePassword;
+           </script>
+
+
+
+
+
+
+
+
+        </form>
+    </body>
+</html>
